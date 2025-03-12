@@ -1,3 +1,79 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// Text shadow for main page title
+.page-title {
+  text-shadow: 0px 0px 2px var(--secondary)88;
+}
+
+// Text shadow for H1 elements only
+article h1 {
+  text-shadow: 0px 0px 1px var(--tertiary)88;
+}
+
+// Increase spacing between list items at the same level
+article {
+    ul li, ol li {
+      margin: 0.5rem 0;
+      
+      // Reset margin for nested lists to maintain hierarchy visual clarity
+      & > ul li, & > ol li {
+        margin: 0.25rem 0;
+      }
+    }
+}
+
+// Make headers and content more specific to article context
+article {
+
+  // Header indentation
+  h1 { margin-left: 0; }
+  h2 { margin-left: 1em; }
+  h3 { margin-left: 2em; }
+  h4 { margin-left: 3em; }
+  h5 { margin-left: 4em; }
+  h6 { margin-left: 5em; }
+
+  // Direct content after headers
+  h1 + * { margin-left: 0em; }
+  h2 + * { margin-left: 1em; }
+  h3 + * { margin-left: 2em; }
+  h4 + * { margin-left: 3em; }
+  h5 + * { margin-left: 4em; }
+  h6 + * { margin-left: 5em; }
+
+  // Subsequent content until next heading
+  h2 ~ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) { margin-left: 1em; }
+  h3 ~ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) { margin-left: 2em; }
+  h4 ~ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) { margin-left: 3em; }
+  h5 ~ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) { margin-left: 4em; }
+  h6 ~ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) { margin-left: 5em; }
+}
+
+// Style for all images in markdown content
+article img {
+  max-height: 10em;
+  width: auto; // maintains aspect ratio
+  display: block; // makes the image and caption align properly
+}
+
+/*
+// Convert image markdown into figure with caption
+article img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--gray); // uses theme color
+}
+
+// Counter for figure numbering
+article {
+  counter-reset: figures;
+}
+
+// Add "Fig. X:" prefix to captions
+article img + em::before {
+  counter-increment: figures;
+  content: "Fig. " counter(figures) ": ";
+}*/
