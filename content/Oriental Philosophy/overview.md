@@ -9,7 +9,7 @@ Questo PowerPoint contiene una brevissima sintesi di alcune delle principali scu
 
 Chiunque abbia il link può commentare, ed è incoraggiato a farlo se ne senta il bisogno. Qualora ci fossero commenti saremo felici di rispondere, e se la discussione sarà proficua i commenti saranno mantenuti.
 
-Il corso utilizza anche materiali esterni, cioè schede reperibili al seguente link: [https://drive.google.com/drive/folders/1fk6xt2K1tdbavphdLgl_HIEEI2mfwtY3?usp=drive_link](https://drive.google.com/drive/folders/1fk6xt2K1tdbavphdLgl_HIEEI2mfwtY3?usp=drive_link)
+Il corso utilizza anche materiali esterni, cioè schede reperibili [qui](https://drive.google.com/drive/folders/1fk6xt2K1tdbavphdLgl_HIEEI2mfwtY3?usp=drive_link).
 
 La filosofia orientale usa termini tecnici che possono apparire complessi. Per questo essi sono stati scritti in *giallo* la prima volta che si incontrano, affiancati da un numero sovrascritto: essi rimandano a un piccolo vocabolario filosofico che inizia alla slide 38. Speriamo possa essere utile.
 
