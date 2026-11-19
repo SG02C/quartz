@@ -1,18 +1,13 @@
-# Quartz v4
+# Storia della Filosofia
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Static website of the philosophy course **“Storia della Filosofia — Da Talete a Freud”**.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+- 616 slides, 7 parts, 42 glossary entries
+- Full reading edition, original slide renders, glossary and full-text search
+- Published at <https://sg02c.github.io/quartz/>
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+This branch contains only the compiled static site. It is generated with Astro from the
+original presentation deck; no build step is required to serve it.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+The `.nojekyll` file disables Jekyll processing so that Astro’s `_astro/` asset folder is
+served as-is by GitHub Pages.
