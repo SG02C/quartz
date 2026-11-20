@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="it" data-course="novecento"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cerca nel corso — Filosofia del Novecento</title><meta name="description" content="Ricerca full-text in tutte le slide del corso di filosofia del novecento."><link rel="canonical" href="https://sg02c.github.io/quartz/novecento/cerca/"><meta property="og:type" content="website"><meta property="og:title" content="Cerca nel corso — Filosofia del Novecento"><meta property="og:description" content="Ricerca full-text in tutte le slide del corso di filosofia del novecento."><meta property="og:image" content="https://sg02c.github.io/quartz/renders/novecento/0001.webp"><meta name="theme-color" content="#f7f3ea"><meta name="app-base" content="/quartz"><meta name="app-course" content="novecento"><link rel="icon" href="/quartz/favicon.svg" type="image/svg+xml"><script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          document.documentElement.dataset.theme =
+            saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script><link rel="stylesheet" href="/quartz/_astro/cerca.TWh_czqC.css"></head> <body> <a class="skip" href="#main">Vai al contenuto</a> <header class="site-head"> <div class="shell site-head__inner"> <a class="brand" href="/quartz/" aria-label="Filosofia — archivio dei corsi"> <span class="brand__mark" aria-hidden="true">Φ</span> <span class="brand__text"> <span class="brand__title">Filosofia</span> <span class="brand__sub">Archivio dei corsi</span> </span> </a> <nav class="site-nav" aria-label="Navigazione principale">  <a href="/quartz/novecento/#parti">
+Parti
+</a> <a href="/quartz/novecento/indice"> Indice </a><a href="/quartz/novecento/cerca" aria-current="page">
+Cerca
+</a> <a class="site-nav__switch" href="/quartz/">Corsi</a>  <button class="icon-btn" type="button" data-theme-toggle aria-label="Cambia tema"> <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"> <circle cx="12" cy="12" r="4"></circle> <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"></path> </svg> </button> </nav> </div> </header> <main id="main">  <header class="page-head"> <div class="shell"> <p class="eyebrow">Ricerca</p> <h1>Cerca nel corso</h1> <p>
+Cerca un termine, un autore, un’opera o un concetto in tutte le 458 slide. I
+        risultati portano direttamente al punto corrispondente della lettura.
+</p> <form class="search-form" role="search" data-search-form> <label class="visually-hidden" for="q">Cerca nel corso</label> <input id="q" name="q" type="search" placeholder="Es. anima, divenire, Kant, mito della caverna…" autocomplete="off" spellcheck="false" data-search-input> <button class="btn" type="submit">Cerca</button> </form> <p class="search-status" data-status aria-live="polite">
+Caricamento dell’indice…
+</p> </div> </header> <div class="shell"> <ol class="results" data-results></ol> <p class="glossary-empty" data-hint hidden>
+Nessun risultato. Prova con una parola singola
+
+, oppure consulta <a href="/quartz/novecento/indice">indice dei nomi</a> .
+</p> </div>  </main> <footer class="site-foot"> <div class="shell site-foot__inner"> <div> <p> <span class="site-foot__mark" aria-hidden="true">XX</span> Filosofia del Novecento —  Dallo strutturalismo a Latour </p> <p>
+Trascrizione integrale delle slide originali del corso: 458 slide,  7 parti
+ , 21 voci d’indice.
+</p> </div> <nav aria-label="Navigazione del sito">  <a href="/quartz/novecento/#parti">Parti</a> <a href="/quartz/novecento/indice">Indice dei nomi</a><a href="/quartz/novecento/cerca">Cerca</a> <a href="/quartz/">Tutti i corsi</a>  </nav> </div> </footer> <script>
+      const toggle = document.querySelector("[data-theme-toggle]");
+      toggle?.addEventListener("click", () => {
+        const root = document.documentElement;
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem("theme", next);
+        } catch {}
+      });
+    </script> </body> </html> <script type="module">const z=document.querySelector("[data-search-form]"),l=document.querySelector("[data-search-input]"),p=document.querySelector("[data-results]"),c=document.querySelector("[data-status]"),h=document.querySelector("[data-hint]"),f=e=>e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),y=e=>e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"),v=(e,s)=>{let r=y(e);for(const n of s){if(n.length<2)continue;const a=new RegExp(`(${n.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")})`,"gi");r=r.replace(a,"<mark>$1</mark>")}return r},b=(e,s)=>{const r=e.toLowerCase();let n=-1;for(const o of s){const i=r.indexOf(o);i>=0&&(n<0||i<n)&&(n=i)}n<0&&(n=0);let a=Math.max(0,n-70),t=Math.min(e.length,n+210);if(a>0){const o=e.indexOf(" ",a);o>=0&&o<n&&(a=o+1)}if(t<e.length){const o=e.lastIndexOf(" ",t);o>n&&(t=o)}return`${a>0?"…":""}${e.slice(a,t).trim()}${t<e.length?"…":""}`};let u=[],w=!1;const L=document.querySelector('meta[name="app-base"]')?.getAttribute("content")||"",S=document.querySelector('meta[name="app-course"]')?.getAttribute("content")||"";fetch(`${L}/${S}/search-index.json`).then(e=>e.json()).then(e=>{u=e.map(r=>({...r,x:r.x,nt:f(r.t),nx:f(r.x)})),w=!0;const s=new URLSearchParams(location.search).get("q")||"";s?(l.value=s,m(s)):c.textContent=`${u.length} sezioni indicizzate. Digita almeno due lettere.`}).catch(()=>{c.textContent="Impossibile caricare l’indice di ricerca."});function m(e){if(!w||!p||!c||!h)return;const s=e.trim();if(s.length<2){p.innerHTML="",h.hidden=!0,c.textContent=`${u.length} sezioni indicizzate. Digita almeno due lettere.`;return}const r=f(s).split(/\s+/).filter(t=>t.length>1),n=[];for(const t of u){let o=!0,i=0,g=0;for(const $ of r){const q=t.nt.includes($)?1:0,d=t.nx.split($).length-1;if(!q&&d===0){o=!1;break}i+=q*12+d,g+=d}o&&n.push({item:t,score:i,hits:g})}n.sort((t,o)=>o.score-t.score||t.item.n-o.item.n);const a=n.slice(0,60);p.innerHTML=a.map(({item:t})=>`
+        <li class="result">
+          <a href="${L}/${S}/parti/${t.p}#slide-${t.n}">
+            <div class="result__meta"><span>${y(t.pt)}</span><span>slide ${t.n}</span></div>
+            <h2>${v(t.t,r)}</h2>
+            <p class="result__snippet">${v(b(t.x,r),r)}</p>
+          </a>
+        </li>`).join(""),h.hidden=a.length>0,c.textContent=a.length===0?`Nessun risultato per “${s}”.`:`${n.length} ${n.length===1?"risultato":"risultati"}${n.length>a.length?` (primi ${a.length})`:""} per “${s}”.`}let x;l?.addEventListener("input",()=>{clearTimeout(x),x=window.setTimeout(()=>m(l.value),140)});z?.addEventListener("submit",e=>{e.preventDefault(),m(l?.value||"");const s=new URL(location.href);s.searchParams.set("q",l?.value||""),history.replaceState(null,"",s)});addEventListener("keydown",e=>{e.key==="/"&&document.activeElement!==l&&(e.preventDefault(),l?.focus())});</script>

@@ -1,12 +1,13 @@
 # Filosofia — archivio dei corsi
 
-Un sito statico con **tre corsi completi** trascritti dalle presentazioni originali:
+Un sito statico con **quattro corsi completi** trascritti dalle presentazioni originali:
 
 | Corso | Slide | Parti | Appendice |
 | --- | --- | --- | --- |
 | **Storia della Filosofia** — da Talete a Freud | 616 | 7 + introduzione | 42 voci di glossario · indice dei nomi |
 | **Storia del Pensiero Politico** — dalla *pòlis* a Foucault | 296 | 4 + introduzione | indice dei nomi |
 | **Filosofia Orientale** — India, Cina e Giappone | 44 | 3 + introduzione | 27 voci di vocabolario · indice dei nomi |
+| **Filosofia del Novecento** — dallo strutturalismo a Latour | 458 | 7 + introduzione | indice dei nomi |
 
 Pubblicato su **<https://sg02c.github.io/quartz/>** (GitHub Pages, project site).
 
@@ -25,7 +26,7 @@ Pubblicato su **<https://sg02c.github.io/quartz/>** (GitHub Pages, project site)
 I vecchi indirizzi della prima versione (`/parti/*`, `/glossario`, `/cerca`) sono conservati come
 redirect verso `/filosofia/*`, così i link già condivisi continuano a funzionare.
 
-`<corso>` è `filosofia`, `politica` oppure `oriente`.
+`<corso>` è `filosofia`, `politica`, `oriente` oppure `novecento`.
 
 ## Avvio rapido
 
@@ -66,7 +67,16 @@ node scripts/verify.mjs politica
 ```
 
 L’elenco dei corsi vive in `scripts/courses.mjs`: aggiungere una nuova presentazione significa
-aggiungere una voce (id, titolo, sorgente `.pptx`, PDF) e rilanciare `npm run data`.
+aggiungere una voce (id, titolo, sorgente `.pptx`, PDF) e rilanciare `npm run data`. Le voci
+opzionali coprono le differenze tra i deck:
+
+- `dividers` — titoli delle slide che aprono una sezione, per i deck che non usano
+  “PARTE n: …” (il corso del Novecento marca le sezioni con una slide dal solo titolo:
+  *Strutturalismo*, *Decostruzione*, *Psicoanalisi*, …);
+- `glossary` — `null`, una stringa, oppure `{ label, group: true }` quando l’appendice è
+  divisa per tradizione (Filosofia orientale);
+- `indexMin` — numero minimo di slide perché un nome entri nell’indice (default 2; 1 per i deck
+  brevi, dove un tema può stare in una sola slide).
 
 ### Che cosa viene conservato
 
