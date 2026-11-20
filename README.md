@@ -1,11 +1,12 @@
 # Filosofia — archivio dei corsi
 
-Un sito statico con **due corsi completi** trascritti dalle presentazioni originali:
+Un sito statico con **tre corsi completi** trascritti dalle presentazioni originali:
 
 | Corso | Slide | Parti | Appendice |
 | --- | --- | --- | --- |
-| **Storia della Filosofia** — da Talete a Freud | 616 | 7 + introduzione | 42 voci di glossario |
-| **Storia del Pensiero Politico** — dalla *pòlis* a Foucault | 296 | 4 + introduzione | 34 voci d’indice dei nomi |
+| **Storia della Filosofia** — da Talete a Freud | 616 | 7 + introduzione | 42 voci di glossario · indice dei nomi |
+| **Storia del Pensiero Politico** — dalla *pòlis* a Foucault | 296 | 4 + introduzione | indice dei nomi |
+| **Filosofia Orientale** — India, Cina e Giappone | 44 | 3 + introduzione | 27 voci di vocabolario · indice dei nomi |
 
 Pubblicato su **<https://sg02c.github.io/quartz/>** (GitHub Pages, project site).
 
@@ -13,18 +14,18 @@ Pubblicato su **<https://sg02c.github.io/quartz/>** (GitHub Pages, project site)
 
 | Rotta | Contenuto |
 | --- | --- |
-| `/` | biblioteca: i due corsi, con descrizione e indice delle parti |
+| `/` | biblioteca: i corsi, con descrizione e indice delle parti |
 | `/<corso>/` | home del corso: parti, numeri, altri corsi |
 | `/<corso>/parti/<slug>` | edizione leggibile di una parte, slide per slide |
 | `/<corso>/parti/<slug>/slide?n=42` | visualizzatore slide con miniature e navigazione da tastiera |
-| `/filosofia/glossario` | glossario dell’appendice con rimandi alle slide |
-| `/politica/indice` | indice dei nomi e dei temi, ricavato dai titoli delle slide |
+| `/<corso>/glossario` | glossario dell’appendice con rimandi alle slide (filosofia, oriente) |
+| `/<corso>/indice` | indice dei nomi e dei temi, ricavato dai titoli delle slide |
 | `/<corso>/cerca` | ricerca full-text su tutte le slide del corso |
 
 I vecchi indirizzi della prima versione (`/parti/*`, `/glossario`, `/cerca`) sono conservati come
 redirect verso `/filosofia/*`, così i link già condivisi continuano a funzionare.
 
-`<corso>` è `filosofia` oppure `politica`.
+`<corso>` è `filosofia`, `politica` oppure `oriente`.
 
 ## Avvio rapido
 
@@ -85,12 +86,14 @@ aggiungere una voce (id, titolo, sorgente `.pptx`, PDF) e rilanciare `npm run da
 - un render fedele a 1280 px di ogni slide (forme vettoriali, SmartArt, frecce, sfondi);
 - una miniatura a 300 px per slide.
 
-Le immagini native condivise stanno in `public/media/` (nomi hash): i due corsi riusano lo stesso
+Le immagini native condivise stanno in `public/media/` (nomi hash): i corsi riusano lo stesso
 file quando la sorgente è identica. I render sono separati per corso in `public/renders/<corso>/`.
 
-**Glossario e indice.** Il corso di filosofia ha un’appendice “Vocabolario”: le voci vengono lette
-da lì, con la definizione originale e i rimandi alle slide in cui il termine ricorre. Il corso di
-pensiero politico non ha appendice, quindi il sito genera un *Indice dei nomi* dai titoli delle
+**Glossario e indice.** Filosofia e Filosofia orientale hanno un’appendice “Vocabolario”: le voci
+vengono lette da lì, con la definizione originale e i rimandi alle slide in cui il termine ricorre.
+Nel corso orientale l’appendice è divisa per tradizione (Induismo, Buddhismo, Filosofia cinese) e i
+termini evidenziati in giallo nelle slide vengono riconosciuti automaticamente. Il pensiero politico
+non ha appendice, quindi per tutti i corsi il sito genera anche un *Indice dei nomi* dai titoli delle
 slide (autori, scuole, temi), senza inventare definizioni.
 
 **Controllo di copertura** (`scripts/verify.mjs`): fallisce su render mancanti, media mancanti,
@@ -139,7 +142,7 @@ npm run qa
 ORIGIN=https://sg02c.github.io BASE_PATH=/quartz npm run qa
 ```
 
-Per ogni rotta di entrambi i corsi controlla errori in console, richieste fallite, HTTP ≥ 400,
+Per ogni rotta di tutti i corsi controlla errori in console, richieste fallite, HTTP ≥ 400,
 overflow orizzontale, attributi `alt`, un solo `h1` per pagina; verifica tutti i link interni e le
 ancore `#slide-N`; esercita lightbox, filtro di glossario/indice, ricerca e navigazione da tastiera
 del visualizzatore; controlla che i vecchi indirizzi redirigano ancora.
